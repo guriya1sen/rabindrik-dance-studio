@@ -1,0 +1,294 @@
+/* style.css - Rabindrik Dance Studio */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    color: #3a2f2f;
+    background-color: #f9f5f0;
+}
+
+/* Header */
+header {
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+nav {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1.1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 68px;
+    height: 68px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 2.05rem;
+    font-weight: 700;
+    color: #1a4a4a;
+    letter-spacing: 1.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.4rem;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #3a2f2f;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #c9a04c;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: #c9a04c;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: #3a2f2f;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    min-height: 650px;
+    background: linear-gradient(rgba(26,74,74,0.78), rgba(26,74,74,0.85)), 
+                url('https://source.unsplash.com/random/2000x1200/?rabindranath,tagore,indian,dance') center/cover no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 1.35rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+}
+
+.highlight-text {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 42px;
+    background: #c9a04c;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #b38a3a;
+    transform: translateY(-6px);
+}
+
+/* Sections */
+.section {
+    max-width: 1300px;
+    margin: 110px auto;
+    padding: 0 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #1a4a4a;
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 90px;
+    height: 3px;
+    background: #c9a04c;
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.class-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.class-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.4s;
+}
+
+.class-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(201,160,76,0.25);
+}
+
+.class-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.class-info {
+    padding: 1.8rem;
+}
+
+.class-info h3 {
+    color: #1a4a4a;
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+}
+
+.timing {
+    background: #f4f0e8;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin: 1.2rem 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: #c9a04c;
+    font-weight: 600;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #1a4a4a;
+    color: #e0d9c8;
+    padding: 100px 5% 80px;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.contact-info h2 {
+    color: #c9a04c;
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .nav-links {
+        position: fixed;
+        top: 75px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 75px);
+        background: white;
+        flex-direction: column;
+        padding-top: 80px;
+        gap: 2rem;
+        transition: left 0.5s;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .logo-img {
+        width: 55px;
+        height: 55px;
+    }
+}
